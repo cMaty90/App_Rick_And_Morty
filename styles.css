@@ -15,3 +15,34 @@
 }
 /*-----------------------------------------------*/
 
+/*-----------REGISTRARSE------------*/
+.body-register{
+ background-color: #3E576C;
+}
+
+.main-register{
+ width: 98vw;
+ height: 98vh;
+}
+.section-register{
+ background-color: #5B5B59;
+ border: 0.2px solid #fff;
+ width: 50%;
+ height: 40%;
+}
+
+label ,span{
+ color: #75DA43;
+ font-family: 'Nerko One', cursive;
+}
+
+@media (max-width: 770px) {
+ .section-register{
+ width: 85%;
+ height: auto;
+}
+.main-register{
+ margin-top: 50px;
+ }
+}
+

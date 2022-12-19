@@ -1,0 +1,17 @@
+ .body-index{
+ background: url(./imagenes/fondoLogin.png) no-repeat center center fixed;
+ background-size: cover;
+ overflow-y:hidden
+}
+
+/*-------------------LOGIN----------------------------*/
+.formulario{
+ position: absolute;
+ top: 25%;
+ left: 10%;
+ border: 0.2px solid lightcyan;
+ padding: 50px 20px;
+ margin-right: 25px;
+}
+/*-----------------------------------------------*/
+

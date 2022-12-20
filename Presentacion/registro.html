@@ -13,51 +13,34 @@
  <main class="main-register d-flex justify-content-center flex-column">
   <h2 class="d-flex justify-content-center"><span>Registrarse</span></h2>
   <section class="section-register container-fluid p-4 rounded-3"> <!--section-->
-   <form class="row g-3">
+   <form class="row g-3 formularioo">
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Nombre Completo</label>
-      <input type="text" class="form-control" id="inputEmail4">
+      <input type="text" class="form-control nombre-usuario" id="inputEmail4" required>
     </div>
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label">Email</label>
-      <input type="email" class="form-control" id="inputPassword4">
+      <input type="email" class="form-control mail-usuario" id="inputPassword4" required>
     </div>
 
     <div class="col-md-6">
       <label for="inputEmail4" class="form-label">Contraseña</label>
-      <input type="text" class="form-control" id="inputEmail4">
+      <input type="password" class="form-control password-usuario" id="inputEmail4" required>
     </div>
     <div class="col-md-6">
       <label for="inputPassword4" class="form-label">Repetir Contraseña</label>
-      <input type="email" class="form-control" id="inputPassword4">
+      <input type="password" class="form-control rep-password-usuario" id="inputPassword4" required>
     </div>
-
-    <!-- <div class="col-12">
-      <label for="inputAddress" class="form-label">Dirección</label>
-      <input type="text" class="form-control" id="inputAddress">
-    </div>
-    
-    <div class="col-md-6">
-      <label for="inputCity" class="form-label">Ciudad</label>
-      <input type="text" class="form-control" id="inputCity">
-    </div>
-    <div class="col-md-4">
-      <label for="inputState" class="form-label">Localidad</label>
-      <input type="text" class="form-control" id="inputState">
-    </div>
-    <div class="col-md-2">
-      <label for="inputZip" class="form-label">C.P</label>
-      <input type="text" class="form-control" id="inputZip">
-    </div> -->
     <br>
     <div class="col-12">
       <button type="submit" class="btn btn-primary mt-3">Registrarse</button>
     </div>
+    <p class="mt-2 text-center fs-5"><a href="./index.html" class="link-log">Ya tiene una cuenta? Haga click aqui</a></p>
    </form>
 
   </section>
  </main>
-
+  <script src="../Logica/registro.js "></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 </body>

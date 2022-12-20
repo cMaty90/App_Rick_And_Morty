@@ -1,4 +1,8 @@
- .body-index{
+:root {
+  --verde-rick: #75DA43;
+}
+
+.body-index{
  background: url(./imagenes/fondoLogin.png) no-repeat center center fixed;
  background-size: cover;
  overflow-y:hidden
@@ -13,7 +17,13 @@
  padding: 50px 20px;
  margin-right: 25px;
 }
-/*-----------------------------------------------*/
+
+.link-registro{
+ color:var(--verde-rick);
+}
+.link-registro:hover{
+ color: var(--verde-rick);
+}
 
 /*-----------REGISTRARSE------------*/
 .body-register{
@@ -32,7 +42,7 @@
 }
 
 label ,span{
- color: #75DA43;
+ color: var(--verde-rick);
  font-family: 'Nerko One', cursive;
 }
 
@@ -44,5 +54,12 @@ label ,span{
 .main-register{
  margin-top: 50px;
  }
+}
+
+.link-log{
+ color: var(--verde-rick);
+}
+.link-log:hover{
+ color: var(--verde-rick);
 }
 

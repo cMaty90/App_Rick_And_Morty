@@ -1,0 +1,15 @@
+body{
+ background-color: #3E576C;
+}
+
+a{
+ text-decoration: none;
+ font-family: 'Nerko One', cursive;
+}
+.card{
+ background-color: #5B5B59;
+}
+
+.personaje__nombre{
+ color: #fff;
+}

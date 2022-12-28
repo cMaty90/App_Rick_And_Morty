@@ -60,6 +60,24 @@ const botonSiguiente = document.querySelector('.btnSiguiente');
 const botonAnterior = document.querySelector('.btnAnterior');
 const linksEpisodios = document.querySelectorAll('.episodio__link');
 
+//funcion para accder al episodio especifico y toda la info relacionada
+const accederEpisodioEspecifico = (url) => {
+ fetch(url)
+ .then(res => res.json())
+  .then(data => {
+   for (let i = 0; i < linksEpisodios.length; i++) {
+    linksEpisodios[i].addEventListener('click', (e) => {
+     let datos = data.results[i];
+     console.log(datos);
+     localStorage.setItem('episodioEspecifico', JSON.stringify(datos));
+     linksEpisodios[i].href = 'episodio-especifico.html';
+     window.location(`${linksEpisodios[i].href}`);
+     e.preventDefault();
+    }); 
+   }
+  })
+}
+
 //se inserta los personajes por primera vez
 fetch(urlPaginaPorEpisodio)
  .then(res => res.json())
@@ -83,6 +101,8 @@ fetch(urlPaginaPorEpisodio)
   console.log(cantidadDePaginas);
   localStorage.setItem('paginaEpisodioBuscado', '1');
  })
+
+accederEpisodioEspecifico(urlPaginaPorEpisodio)
 
 //funcion para insertar imagenes y nombre
 const paginacion = async (url) => {
@@ -111,9 +131,10 @@ botonSiguiente.addEventListener('click', () => {
  if (parseInt(JSON.parse(localStorage.getItem('paginaEpisodioBuscado'))) <= cantidadDePaginas) {
   contadorPaginacion++;
   localStorage.setItem('paginaEpisodioBuscado', JSON.stringify(contadorPaginacion));
-  let nuevaPagina = `${urlPaginaPorEpisodio}?page=${contadorPaginacion}`;
+  let nuevaPagina = `${urlPaginaPorEpisodio}&page=${contadorPaginacion}`;
   console.log(`contador siguiente: ${contadorPaginacion}`);
   paginacion(nuevaPagina);
+  accederEpisodioEspecifico(nuevaPagina);
  }
 
  else {
@@ -128,8 +149,9 @@ botonAnterior.addEventListener('click', () => {
   contadorPaginacion--;
   localStorage.setItem('paginaEpisodioBuscado', JSON.stringify(contadorPaginacion));
   console.log(`contador anterior: ${contadorPaginacion}`);
-  let paginaAnterior = `${urlPaginaPorEpisodio}?page=${contadorPaginacion}`;
+  let paginaAnterior = `${urlPaginaPorEpisodio}&page=${contadorPaginacion}`;
   paginacion(paginaAnterior);
+  accederEpisodioEspecifico(paginaAnterior);
  }
  else {
   alert('no hay mas paginas anteriores');

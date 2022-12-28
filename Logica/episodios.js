@@ -120,6 +120,7 @@ botonSiguiente.addEventListener('click', () => {
   let nuevaPagina = `${urlEpisodios}?page=${contadorPaginacion}`;
   console.log(`contador siguiente: ${contadorPaginacion}`);
   paginacion(nuevaPagina);
+  accederEpisodioEspecifico(nuevaPagina);
  }
 
  else {
@@ -136,6 +137,7 @@ botonAnterior.addEventListener('click', () => {
   console.log(`contador anterior: ${contadorPaginacion}`);
   let paginaAnterior = `${urlEpisodios}?page=${contadorPaginacion}`;
   paginacion(paginaAnterior);
+  accederEpisodioEspecifico(paginaAnterior);
  }
  else {
   alert('no hay mas paginas anteriores');
@@ -143,12 +145,12 @@ botonAnterior.addEventListener('click', () => {
 })
 
 /*--------------------------busqueda de episodios------------------------------- */
-let episodioBuscado = document.querySelector('.buscador__input');
+
 let botonBuscarEpisodio = document.querySelector('.buscador__btn');
-
+botonBuscarEpisodio.href = "#";
+let nombreEpisodioParaBuscar = document.querySelector('.buscador__input');
 botonBuscarEpisodio.addEventListener('click', () => {
- localStorage.setItem('episodioBuscado', JSON.stringify(episodioBuscado.value));
- window.open('episodio-buscado.html');
+ localStorage.setItem('episodioBuscado', JSON.stringify(nombreEpisodioParaBuscar.value));
+ botonBuscarEpisodio.href = "episodio-buscado.html";
+ window.location(`${botonBuscarEpisodio.href}`);
 })
-
-

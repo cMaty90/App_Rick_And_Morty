@@ -43,6 +43,11 @@ const cargarPersonajesEpisodioEspecifico = async () => {
   const resultado = await resp.json();
   etiquetasPersonajes[i].textContent = resultado.name;
   etiquetasPersonajes[i].href = '#';
+  etiquetasPersonajes[i].addEventListener('click', () => {
+   localStorage.setItem('personajeEspecifico', JSON.stringify(resultado));
+   etiquetasPersonajes[i].href = "personaje-especifico.html";
+   window.location(`${etiquetasPersonajes[i].href}`);
+  })
  }
 }
 cargarPersonajesEpisodioEspecifico()

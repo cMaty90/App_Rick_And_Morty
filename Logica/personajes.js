@@ -142,10 +142,12 @@ botonAnterior.addEventListener('click', () => {
 /*--------------------------busqueda de personaje------------------------------- */
 
 let botonBuscarPersonaje = document.querySelector('.buscador__btn');
+botonBuscarPersonaje.href = "#";
 let nombrePersonajeParaBuscar = document.querySelector('.buscador__input');
 botonBuscarPersonaje.addEventListener('click', () => {
  localStorage.setItem('personajeBuscado', JSON.stringify(nombrePersonajeParaBuscar.value));
- window.open('personaje-buscado.html');
+ botonBuscarPersonaje.href = "personaje-buscado.html";
+ window.location(`${botonBuscarPersonaje.href}`);
 })
 
 

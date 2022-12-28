@@ -51,9 +51,34 @@ const cargarCapitulosPersonajeEspecifico = async () => {
   const resultado = await resp.json();
   etiquetasA[i].textContent = resultado.name;
   etiquetasA[i].href = '#';
+  //agrego evento para acceder a episodio
+  etiquetasA[i].addEventListener('click', () => {
+   localStorage.setItem('episodioEspecifico', JSON.stringify(resultado));
+   etiquetasA[i].href = "episodio-especifico.html";
+   window.location(`${etiquetasA[i].href}`);
+  })
  }
 }
 cargarCapitulosPersonajeEspecifico()
+
+/*------------- acceder a episodios del personaje especifico ------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -71,48 +96,6 @@ cargarCapitulosPersonajeEspecifico()
 //   })
 // }
 /*----------------------------------------------------------- */
-
-
-// const paginacion = async (url) => {
-//  const resp = await fetch(url);
-//  const resultado = await resp.json();
-//  for (let i = 0; i < imagenes.length; i++) {
-//   imagenes[i].src = resultado.results[i].image;
-//   imagenes[i].className = 'img-fluid';
-//   nombres[i].textContent = resultado.results[i].name;
-//  }
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*------------funciona pero deja todos los episodios en solo una columna----------- */
-// for (let i = 0; i < vectorUrlEpisodios.length; i++) {
-//  let link = crearLinkEpisodio();
-//  contenedorLinksEpisodios.appendChild(link);
-//   fetch(vectorUrlEpisodios[i])
-//   .then(res => res.json())
-//    .then(data => {
-//     link.textContent = data.name;
-//     link.href = '#';
-//     console.log(data.name);
-//   })
-// }
-/*------------------------------------------------------------------------------ */
-
 
 
 

@@ -1,0 +1,25 @@
+
+:root{
+ --color-blanco:#fff;
+}
+
+body{
+ background-color: #3E576C;
+}
+
+h5{
+ text-align: center;
+}
+
+.card{
+ background-color: #5B5B59;
+ border: 1px solid var(--color-blanco)
+}
+
+span{
+ font-size:large;
+}
+
+.ubicacion__link{
+ color: var(--color-blanco);
+}

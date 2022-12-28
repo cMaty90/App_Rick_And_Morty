@@ -8,6 +8,13 @@
  margin-right: 5px;
 }
 
+.buscador__btn{
+ border: 1px solid #fff;
+}
+.buscador__btn:hover{
+ background-color: #7991A4;
+}
+
 @media (max-width: 670px){
  .ruta-acceso__input{
   width: 90%;

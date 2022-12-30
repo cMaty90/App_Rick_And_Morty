@@ -11,6 +11,7 @@
  <title>Episodios</title>
 </head>
 <body>
+ <p class="nombre-usuario"></p>
  <!-- Header -->
  <header class=" navegacion shadow-sm d-flex justify-content-center mb-2 justify-content-between">
   <nav class="nav1">
@@ -20,20 +21,20 @@
    <a class="nav1__link" href="./ubicaciones.html">Ubicaciones</a>
   </nav>
   <nav class="nav2">
-   <span>Cerrar Sesion</span>
+   <span class="cerrar-sesion">Cerrar Sesion</span>
   </nav>
  </header>
 
  <!-- Main -->
  <main>
   <section class="ruta-acceso d-flex justify-content-center">
-   <input class="ruta-acceso__input form-control" type="text" value="path" readonly>
+   <input class="ruta-acceso__input form-control opacity-50" type="text" value="Home / Episodios" readonly>
   </section>
 
   <section class="buscador d-flex justify-content-center">
-    <input type="text" placeholder="personaje" class="buscador__input rounded-3">
+    <input type="text" placeholder="ejemplo: S01E01 (temporada 1 episodio 1)" class="buscador__input rounded-3">
     <a class="buscador__btn text-decoration-none text-light p-2 rounded-2">
-     Buscar Personaje
+     Buscar Episodio
     </a>
     <!-- <button class="buscador__btn btn btn-primary rounded-3" type="submit">Buscar Personaje</button> -->
   </section>
@@ -50,6 +51,10 @@
   </footer>
  </main>
 
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
  <script src="../logica/episodios.js"></script>
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>

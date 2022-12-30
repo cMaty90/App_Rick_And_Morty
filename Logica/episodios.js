@@ -1,4 +1,35 @@
+
+//animacion con GSAP
+const animacionGrilla = (etiqueta) => {
+ gsap.to(etiqueta,1, {
+    scale: 0.1, 
+    y: 60,
+    yoyo: true, 
+    repeat: 1, 
+    delay: 0,
+   stagger: {
+     ease: "power1.inOut",
+     amount: 1.5,
+     axis:"x",
+     grid: "auto",
+     from: "end"
+    }
+  });
+}
+
+
 const urlEpisodios = "https://rickandmortyapi.com/api/episode";
+
+/*-----------------------tratamiento de Sesion de usuario----------------- */
+let btnCerrarSesion = document.querySelector('.cerrar-sesion');
+let nombreUsuario = JSON.parse(localStorage.getItem('miUsuario'));
+let usuario = document.querySelector('.nombre-usuario');
+usuario.textContent = `Bienvenido: ${nombreUsuario}`;
+
+btnCerrarSesion.addEventListener('click', () => {
+ window.open('index.html');
+ window.close();
+})
 
 /*--------------------creacion de tarjetas y grilla---------------------- */
 
@@ -13,7 +44,7 @@ const crearTarjeta = () => {  //tarjeta de episodios
  let descripcionEpisodio = document.createElement('p');
  //asigno clases
  tarjeta.className = "card col-sm col-md col-lg p-0 m-3";
- tarjeta.style = "width: 18rem;";
+ // tarjeta.style = "width: 18rem;";
  nroEpisodio.className = "numero-episodio";
  cuerpoTarjeta.className = "card-body epìsodio";
  nombresEpisodio.className = "episodio__link";
@@ -81,6 +112,7 @@ fetch(urlEpisodios)
  .then(res => res.json())
  .then(data => {
   for (let i = 0; i < tarjetas.length; i++) {
+   animacionGrilla(tarjetas[i]);
    numerosEpisodios[i].textContent = `Episodio ${data.results[i].id}`;
    nombresEpisodios[i].textContent = `${data.results[i].name}`;
    descripcionesEpisodios[i].textContent = `fecha lanzamiento: ${data.results[i].air_date} |
@@ -96,7 +128,7 @@ const paginacion = async (url) => {
  const resp = await fetch(url);
  const resultado = await resp.json();
  for (let i = 0; i < tarjetas.length; i++) {
-  if (resultado.results[i]==undefined) {
+  if (resultado.results[i] == undefined) {
    numerosEpisodios[i].textContent = '';
    nombresEpisodios[i].textContent = '';
    descripcionesEpisodios[i].textContent = '';

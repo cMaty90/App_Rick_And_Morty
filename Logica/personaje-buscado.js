@@ -16,11 +16,11 @@ const crearTarjeta = () => {  //tarjeta de personajes
  let spanNombrePersonaje = document.createElement('span');
  //asigno clases
  tarjeta.className = "card col-sm col-md col-lg p-0 m-3";
- tarjeta.style = "width: 18rem;";
+ // tarjeta.style = "width: 18rem;";
  imagenTarjeta.className = "card-img-top character";
  cuerpoTarjeta.className = "card-body personaje";
  nombrePersonaje.className = "personaje__link";
- nombrePersonaje.href = "personaje-especifico.html";
+ nombrePersonaje.href = "#";
  spanNombrePersonaje.className = "personaje__nombre";
  //asigno hijos
  tarjeta.append(imagenTarjeta, cuerpoTarjeta);
@@ -65,9 +65,10 @@ const accederPersonajeEspecifico = (url) => {
    for (let i = 0; i < linkPersonajes.length; i++) {
    linkPersonajes[i].addEventListener('click', (e) => {
     let datos = data.results[i];
-    window.open('./personaje-especifico.html');
     console.log(datos);
     localStorage.setItem('personajeEspecifico', JSON.stringify(datos));
+    linkPersonajes[i].href = 'personaje-especifico.html';
+    window.location(`${linkPersonajes[i].href}`);
     e.preventDefault();
     }); 
    }

@@ -52,7 +52,9 @@ const postIniciarSesion = async () => {
    let validacion = validarInicioSesion(mailUsario, resultadoMail);
    if (validacion) {
     alert('inicio de sesion exitoso');
-    window.open('https://google.com');
+    localStorage.setItem('miUsuario', JSON.stringify(resultado.data.user.name));
+    window.open('personajes.html');
+    window.close();
    }
   }
   else {

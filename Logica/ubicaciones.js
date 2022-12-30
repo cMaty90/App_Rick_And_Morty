@@ -1,5 +1,35 @@
 
+//animacion con GSAP
+const animacionGrilla = (etiqueta) => {
+ gsap.to(etiqueta,1, {
+    scale: 0.1, 
+    y: 60,
+    yoyo: true, 
+    repeat: 1, 
+    delay: 0,
+   stagger: {
+     ease: "power1.inOut",
+     amount: 1.5,
+     axis:"x",
+     grid: "auto",
+     from: "end"
+    }
+  });
+}
+
 const urlUbicaciones = "https://rickandmortyapi.com/api/location";
+
+/*-----------------------tratamiento de Sesion de usuario----------------- */
+let btnCerrarSesion = document.querySelector('.cerrar-sesion');
+let nombreUsuario = JSON.parse(localStorage.getItem('miUsuario'));
+let usuario = document.querySelector('.nombre-usuario');
+usuario.textContent = `Bienvenido: ${nombreUsuario}`;
+
+btnCerrarSesion.addEventListener('click', () => {
+ window.open('index.html');
+ window.close();
+})
+
 /*--------------------creacion de tarjetas y grilla---------------------- */
 
 const contenedor = document.querySelector('.container');
@@ -13,7 +43,7 @@ const crearTarjeta = () => {  //tarjeta de ubicaciones
  let dimensionUbicacion = document.createElement('p');
  //asigno clases
  tarjeta.className = "card col-sm col-md col-lg p-0 m-3";
- tarjeta.style = "width: 18rem;";
+ // tarjeta.style = "width: 18rem;";
  nombreUbicacion.className = "nombre-ubicacion";
  cuerpoTarjeta.className = "card-body ubicacion";
  tipoUbicacion.className = "ubicacion__link";
@@ -80,6 +110,7 @@ fetch(urlUbicaciones)
  .then(res => res.json())
  .then(data => {
   for (let i = 0; i < tarjetas.length; i++) {
+   animacionGrilla(tarjetas[i]);
    nombresUbicaciones[i].textContent = `${data.results[i].name}`;
    tiposUbicaciones[i].textContent = `${data.results[i].type}`;
    dimensionesUbicaciones[i].textContent = `dimension: ${data.results[i].dimension}`;

@@ -84,5 +84,7 @@ a{
   display: flex;
   flex-direction: column;
   align-items: end;
+  width: 80%;
+  margin-left: 5px;
  }
 }

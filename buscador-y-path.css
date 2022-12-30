@@ -3,6 +3,12 @@
  margin: 10px 10px;
 }
 
+.nombre-usuario{
+ text-align: center;
+ font-family: sans-serif;
+ color: #75DA43;
+}
+
 .buscador__input{
  width: 50%;
  margin-right: 5px;

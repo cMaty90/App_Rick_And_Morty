@@ -15,7 +15,7 @@ const crearTarjeta = () => {  //tarjeta de ubicaciones
  let dimensionUbicacion = document.createElement('p');
  //asigno clases
  tarjeta.className = "card col-sm col-md col-lg p-0 m-3";
- tarjeta.style = "width: 18rem;";
+ // tarjeta.style = "width: 18rem;";
  nombreUbicacion.className = "nombre-ubicacion";
  cuerpoTarjeta.className = "card-body ubicacion";
  tipoUbicacion.className = "ubicacion__link";

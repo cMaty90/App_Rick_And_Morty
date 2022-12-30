@@ -1,6 +1,8 @@
 
 let datosPersonajeEspecifico = JSON.parse(localStorage.getItem('personajeEspecifico'));
-console.log(datosPersonajeEspecifico)
+console.log(datosPersonajeEspecifico.location.url)
+console.log(datosPersonajeEspecifico.origin.url)
+
 
 let imagen = document.querySelector('img');
 let nombrePersonaje = document.querySelector('.nombre');
@@ -17,6 +19,32 @@ speciesPersonaje.textContent = `Specie: ${datosPersonajeEspecifico.species}`;
 genderPersonaje.textContent = `Genero: ${datosPersonajeEspecifico.gender}`;
 originPersonaje.textContent = `${datosPersonajeEspecifico.origin.name}`;
 locationPersonaje.textContent = `${datosPersonajeEspecifico.location.name}`;
+/*----------------------------------------------------------------------------------------*/
+//tratamiento para redireccionar a la ubicacion especifica del personaje
+const obtenerUbicacionEspecificaDelPersonaje = (url) => {
+ fetch(url)
+  .then(res => res.json())
+  .then(data => {
+   console.log('mi ddata')
+   console.log(data)
+   localStorage.setItem('ubicacionEspecifica', JSON.stringify(data));
+ })
+}
+
+const redireccionarOrigenEspecifico = () => {
+ setTimeout(function () {
+  originPersonaje.href = 'ubicacion-especifica.html';
+  window.location.assign('ubicacion-especifica.html');
+ },1200)
+}
+originPersonaje.addEventListener('click', (e) => {
+ let urlOrigin = datosPersonajeEspecifico.origin.url;
+ obtenerUbicacionEspecificaDelPersonaje(urlOrigin);
+ redireccionarOrigenEspecifico();
+})
+
+
+
 /*----------------------------------------------------------------------------------------*/
 
 //elementos de la maquetacion para mostrar la lista de episodios
@@ -61,7 +89,6 @@ const cargarCapitulosPersonajeEspecifico = async () => {
 }
 cargarCapitulosPersonajeEspecifico()
 
-/*------------- acceder a episodios del personaje especifico ------------*/
 
 
 

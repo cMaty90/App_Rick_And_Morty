@@ -1,6 +1,7 @@
 :root{
  --color-blanco:#fff;
  --color-titulos:#34F3DC;
+ --color-personajes:#F5FC16;
 }
 
 body{
@@ -15,7 +16,7 @@ body{
  color: var(--color-blanco);
 }
 .link-personaje:hover{
- color: var(--color-blanco);
+ color: var(--color-personajes);
 }
 
 h5{

@@ -32,6 +32,7 @@ img{
 }
 .origin:hover, .location:hover{
  color: var(--color-celeste);
+ cursor: pointer;
 }
 
 .info-personaje , .lista-episodios{

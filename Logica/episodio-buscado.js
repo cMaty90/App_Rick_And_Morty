@@ -15,7 +15,7 @@ const crearTarjeta = () => {  //tarjeta de episodios
  let descripcionEpisodio = document.createElement('p');
  //asigno clases
  tarjeta.className = "card col-sm col-md col-lg p-0 m-3";
- tarjeta.style = "width: 18rem;";
+ // tarjeta.style = "width: 18rem;";
  nroEpisodio.className = "numero-episodio";
  cuerpoTarjeta.className = "card-body epìsodio";
  nombresEpisodio.className = "episodio__link";

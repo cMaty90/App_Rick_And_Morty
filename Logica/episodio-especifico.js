@@ -1,3 +1,15 @@
+
+/*-----------------------tratamiento de Sesion de usuario----------------- */
+let btnCerrarSesion = document.querySelector('.cerrar-sesion');
+let nombreUsuario = JSON.parse(localStorage.getItem('miUsuario'));
+let usuario = document.querySelector('.nombre-usuario');
+usuario.textContent = `Bienvenido: ${nombreUsuario}`;
+
+btnCerrarSesion.addEventListener('click', () => {
+ window.open('index.html');
+ window.close();
+})
+
 let datosEpisodioEspecifico = JSON.parse(localStorage.getItem('episodioEspecifico'));
 // console.log(datosEpisodioEspecifico);
 

@@ -88,7 +88,7 @@ const botonSiguiente = document.querySelector('.btnSiguiente');
 const botonAnterior = document.querySelector('.btnAnterior');
 const linksUbicaciones = document.querySelectorAll('.ubicacion__link');
 
-//funcion para accder al episodio especifico y toda la info relacionada
+//funcion para accder a la ubicacion especifica y toda la info relacionada
 const accederUbicacionEspecifica = (url) => {
  fetch(url)
  .then(res => res.json())
@@ -105,7 +105,7 @@ const accederUbicacionEspecifica = (url) => {
   })
 }
 
-//se inserta los personajes por primera vez
+//se insertan las ubicaciones por primera vez
 fetch(urlUbicaciones)
  .then(res => res.json())
  .then(data => {
@@ -170,7 +170,7 @@ botonAnterior.addEventListener('click', () => {
  }
 })
 
-/*--------------------------busqueda de episodios------------------------------- */
+/*--------------------------busqueda de ubicacion------------------------------- */
 let botonBuscarUbicacion = document.querySelector('.buscador__btn');
 botonBuscarUbicacion.href = "#";
 let nombreUbicacionParaBuscar = document.querySelector('.buscador__input');

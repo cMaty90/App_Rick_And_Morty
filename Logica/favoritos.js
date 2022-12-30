@@ -1,4 +1,15 @@
 
+/*-----------------------tratamiento de Sesion de usuario----------------- */
+let btnCerrarSesion = document.querySelector('.cerrar-sesion');
+let nombreUsuario = JSON.parse(localStorage.getItem('miUsuario'));
+let usuario = document.querySelector('.nombre-usuario');
+usuario.textContent = `Bienvenido: ${nombreUsuario}`;
+
+btnCerrarSesion.addEventListener('click', () => {
+ window.open('index.html');
+ window.close();
+})
+
 
 let vectorPersonajesFavoritos = JSON.parse(localStorage.getItem('vectorPersonajesFavoritos'));
 for (let i = 0; i < vectorPersonajesFavoritos.length; i++) {
@@ -18,7 +29,7 @@ const crearTarjeta = () => {  //tarjeta de personajes
 
  //asigno clases
  tarjeta.className = "card col-sm col-md col-lg p-0 m-3";
- tarjeta.style = "width: 18rem;";
+ // tarjeta.style = "width: 18rem;";
  imagenTarjeta.className = "card-img-top character";
  cuerpoTarjeta.className = "card-body personaje";
  nombrePersonaje.className = "personaje__link";

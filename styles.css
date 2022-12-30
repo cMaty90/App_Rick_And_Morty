@@ -1,5 +1,8 @@
 :root {
   --verde-rick: #75DA43;
+  --color-gris:#5B5B59;
+  --color-fondo:#3E576C;
+  --color-blanco:#fff;
 }
 
 .body-index{
@@ -27,7 +30,7 @@
 
 /*-----------REGISTRARSE------------*/
 .body-register{
- background-color: #3E576C;
+ background-color: var(--color-fondo);
 }
 
 .main-register{
@@ -35,8 +38,8 @@
  height: 98vh;
 }
 .section-register{
- background-color: #5B5B59;
- border: 0.2px solid #fff;
+ background-color: var(--color-gris);
+ border: 0.2px solid var(--color-blanco);
  width: 50%;
  height: 40%;
 }
@@ -65,18 +68,22 @@ label ,span{
 
 /*-----------PERSONAJES------------*/
 .body-personajes{
- background-color: #3E576C;
+ background-color: var(--color-fondo);
 }
 
 a{
  text-decoration: none;
 }
 .card{
- background-color: #5B5B59;
+ background-color: var(--color-gris);
 }
 
 .personaje__nombre{
- color: #fff;
+ color: var(--color-blanco);
+ transition: color .2s ease-in-out;
+}
+.personaje__nombre:hover{
+ color: #34F3DC;
 }
 
 @media (max-width: 670px){

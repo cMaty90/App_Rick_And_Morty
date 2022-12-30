@@ -1,4 +1,15 @@
 
+/*-----------------------tratamiento de Sesion de usuario----------------- */
+let btnCerrarSesion = document.querySelector('.cerrar-sesion');
+let nombreUsuario = JSON.parse(localStorage.getItem('miUsuario'));
+let usuario = document.querySelector('.nombre-usuario');
+usuario.textContent = `Bienvenido: ${nombreUsuario}`;
+
+btnCerrarSesion.addEventListener('click', () => {
+ window.open('index.html');
+ window.close();
+})
+
 let datosPersonajeEspecifico = JSON.parse(localStorage.getItem('personajeEspecifico'));
 console.log(datosPersonajeEspecifico.location.url)
 console.log(datosPersonajeEspecifico.origin.url)
@@ -35,7 +46,7 @@ const redireccionarOrigenEspecifico = () => {
  setTimeout(function () {
   originPersonaje.href = 'ubicacion-especifica.html';
   window.location.assign('ubicacion-especifica.html');
- },1200)
+ },1100)
 }
 originPersonaje.addEventListener('click', (e) => {
  let urlOrigin = datosPersonajeEspecifico.origin.url;
@@ -43,7 +54,11 @@ originPersonaje.addEventListener('click', (e) => {
  redireccionarOrigenEspecifico();
 })
 
-
+locationPersonaje.addEventListener('click', () => {
+ let urlLocation = datosPersonajeEspecifico.location.url;
+ obtenerUbicacionEspecificaDelPersonaje(urlLocation);
+ redireccionarOrigenEspecifico();
+})
 
 /*----------------------------------------------------------------------------------------*/
 

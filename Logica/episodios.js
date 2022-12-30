@@ -107,7 +107,7 @@ const accederEpisodioEspecifico = (url) => {
 }
 
 
-//se inserta los personajes por primera vez
+//se inserta los episodios por primera vez
 fetch(urlEpisodios)
  .then(res => res.json())
  .then(data => {
@@ -123,7 +123,7 @@ fetch(urlEpisodios)
  })
 accederEpisodioEspecifico(urlEpisodios);
 
-//funcion para insertar imagenes y nombre
+//funcion para insertar datos de los episodios
 const paginacion = async (url) => {
  const resp = await fetch(url);
  const resultado = await resp.json();

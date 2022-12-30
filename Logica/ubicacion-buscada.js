@@ -2,6 +2,17 @@
 let nombreUbicacionBuscada = JSON.parse(localStorage.getItem('ubicacionBuscada'));
 let urlPaginaUbicacionBuscada = `https://rickandmortyapi.com/api/location?type=${nombreUbicacionBuscada}`;
 
+/*-----------------------tratamiento de Sesion de usuario----------------- */
+let btnCerrarSesion = document.querySelector('.cerrar-sesion');
+let nombreUsuario = JSON.parse(localStorage.getItem('miUsuario'));
+let usuario = document.querySelector('.nombre-usuario');
+usuario.textContent = `Bienvenido: ${nombreUsuario}`;
+
+btnCerrarSesion.addEventListener('click', () => {
+ window.open('index.html');
+ window.close();
+})
+
 /*--------------------creacion de tarjetas y grilla---------------------- */
 
 const contenedor = document.querySelector('.container');
@@ -60,7 +71,7 @@ const botonSiguiente = document.querySelector('.btnSiguiente');
 const botonAnterior = document.querySelector('.btnAnterior');
 const linksUbicaciones = document.querySelectorAll('.ubicacion__link');
 
-//funcion para accder al episodio especifico y toda la info relacionada
+//funcion para accder a la ubicacion especifica y toda la info relacionada
 const accederUbicacionEspecifica = (url) => {
  fetch(url)
  .then(res => res.json())
@@ -77,7 +88,7 @@ const accederUbicacionEspecifica = (url) => {
   })
 }
 
-//se inserta los personajes por primera vez
+//se insertan las ubicaciones por primera vez
 fetch(urlPaginaUbicacionBuscada)
  .then(res => res.json())
  .then(data => {

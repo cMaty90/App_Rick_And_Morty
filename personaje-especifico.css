@@ -2,6 +2,12 @@
   --color-celeste: #34F3DC;
   --color-fondo:#3E576C;
   --color-blanco:#fff;
+  --verde-rick: #75DA43;
+}
+
+.nombre-usuario{
+ text-align: center;
+ color: var(--verde-rick);
 }
 
 body{

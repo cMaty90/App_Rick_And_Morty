@@ -3,6 +3,17 @@ let urlPaginacion = "https://rickandmortyapi.com/api/episode";
 let nombreEpisodioBuscado = JSON.parse(localStorage.getItem('episodioBuscado'));
 let urlPaginaPorEpisodio = `https://rickandmortyapi.com/api/episode?episode=${nombreEpisodioBuscado}`;
 
+/*-----------------------tratamiento de Sesion de usuario----------------- */
+let btnCerrarSesion = document.querySelector('.cerrar-sesion');
+let nombreUsuario = JSON.parse(localStorage.getItem('miUsuario'));
+let usuario = document.querySelector('.nombre-usuario');
+usuario.textContent = `Bienvenido: ${nombreUsuario}`;
+
+btnCerrarSesion.addEventListener('click', () => {
+ window.open('index.html');
+ window.close();
+})
+
 /*--------------------creacion de tarjetas y grilla---------------------- */
 const contenedor = document.querySelector('.container');
 
@@ -78,7 +89,7 @@ const accederEpisodioEspecifico = (url) => {
   })
 }
 
-//se inserta los personajes por primera vez
+//se inserta los episodios por primera vez
 fetch(urlPaginaPorEpisodio)
  .then(res => res.json())
  .then(data => {
@@ -104,7 +115,7 @@ fetch(urlPaginaPorEpisodio)
 
 accederEpisodioEspecifico(urlPaginaPorEpisodio)
 
-//funcion para insertar imagenes y nombre
+//funcion para insertar datos de los episodios
 const paginacion = async (url) => {
  const resp = await fetch(url);
  const resultado = await resp.json();

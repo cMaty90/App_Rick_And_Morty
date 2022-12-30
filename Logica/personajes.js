@@ -39,7 +39,6 @@ btnCerrarSesion.addEventListener('click', () => {
  window.close();
 })
 
-
 /*--------------------creacion de tarjetas y grilla---------------------- */
 const contenedor = document.querySelector('.container');
 
